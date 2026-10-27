@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MON-CAR Showroom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <h1>MON-CAR SHOWROOM</h1>
+        <nav class="navbar">
+            <a href="#" onclick="switchView('beranda')">Beranda</a>
+            <a href="#" onclick="switchView('katalog')">Katalog Mobil</a>
+            <a href="#" onclick="switchView('favorit')">Favorit (<span id="wishlist-count">0</span>)</a>
+            <a href="#" onclick="switchView('tentang')">Tentang Kami</a>
+            <a href="#" onclick="switchView('kontak')">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- TAMPILAN BERANDA -->
+    <div id="view-beranda" class="page-view active-view">
+        <section class="hero-section">
+            <h2>Temukan Mobil Impian Anda di Sini</h2>
+            <p>Pusat showroom mobil pilihan dengan kualitas terbaik, terpercaya, dan penawaran harga terbaik untuk Anda.</p>
+            <button class="cta-btn" onclick="switchView('katalog')">Jelajahi Katalog Mobil</button>
+        </section>
+
+        <section class="features-section">
+            <h2>Mengapa Memilih MON-CAR Showroom?</h2>
+            <p class="section-subtitle">Kami berkomitmen memberikan pengalaman terbaik dan terpercaya bagi setiap pelanggan.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Terpercaya & Bergaransi</h3>
+                    <p>Semua unit kendaraan telah melalui inspeksi menyeluruh, dijamin keaslian dokumen dan kondisi mesinnya.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Pilihan Terlengkap</h3>
+                    <p>Menghadirkan berbagai merek mobil populer mulai dari kategori SUV, Sedan, hingga kendaraan listrik modern.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Proses Mudah & Cepat</h3>
+                    <p>Didukung tim profesional untuk pengurusan pembayaran tunai maupun simulasi kredit dengan DP ringan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-cars-section">
+            <h2>Mobil Unggulan Pilihan</h2>
+            <p class="section-subtitle">Beberapa model favorit yang paling dicari minggu ini.</p>
+            
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" alt="Toyota Alphard">
+                    <div class="featured-info">
+                        <h3>Toyota Alphard</h3>
+                        <p class="price">Rp 1.200.000.000</p>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80" alt="BYD Atto 3">
+                    <div class="featured-info">
+                        <h3>BYD Atto 3</h3>
+                        <p class="price">Rp 450.000.000</p>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="Hyundai Ioniq 5">
+                    <div class="featured-info">
+                        <h3>Hyundai Ioniq 5</h3>
+                        <p class="price">Rp 750.000.000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tentang" class="info-section">
+            <h2>Tentang Kami</h2>
+            <p>MON-CAR Showroom adalah pusat penjualan mobil pilihan dengan kualitas terbaik, terpercaya, dan harga bersaing yang siap memenuhi kebutuhan mobilitas Anda dan keluarga.</p>
+        </section>
+
+        <section id="kontak" class="kontak-section">
+            <h2>Kontak Kami</h2>
+            <p>Hubungi WhatsApp: 0899-9999-9999 | Lokasi: Jl. Showroom Mobil No. 1</p>
+        </section>
+    </div>
+
+    <!-- TAMPILAN KATALOG MOBIL (Khusus API DNCC) -->
+    <div id="view-katalog" class="page-view" style="display: none;">
+        <section class="katalog-section">
+            <div class="katalog-header">
+                <h2>Katalog Mobil Pilihan</h2>
+                <p>Temukan berbagai pilihan mobil impian Anda dengan spesifikasi lengkap di sini. Klik kartu mobil untuk detail atau ikon hati untuk menyimpan ke favorit.</p>
+            </div>
+
+            <!-- Kolom Pencarian -->
+            <div class="search-box-wrapper">
+                <input type="text" id="search-input" placeholder="Cari nama mobil...">
+            </div>
+
+            <!-- Tombol Filter Merek -->
+            <div id="filter-container" class="filter-buttons">
+                <button class="filter-btn active" data-brand="semua">Semua</button>
+                <button class="filter-btn" data-brand="Toyota">Toyota</button>
+                <button class="filter-btn" data-brand="BYD">BYD</button>
+                <button class="filter-btn" data-brand="Hyundai">Hyundai</button>
+                <button class="filter-btn" data-brand="Honda">Honda</button>
+                <button class="filter-btn" data-brand="Suzuki">Suzuki</button>
+                <button class="filter-btn" data-brand="Mitsubishi">Mitsubishi</button>
+            </div>
+
+            <!-- Indikator Loading / Spinner -->
+            <div id="loading-spinner" class="spinner-container" style="display: none;">
+                <div class="spinner"></div>
+                <p>Memuat data mobil dari server DNCC...</p>
+            </div>
+
+            <!-- Wadah Daftar Mobil dari API -->
+            <div id="car-container"></div>
+        </section>
+    </div>
+
+    <!-- TAMPILAN MOBIL FAVORIT -->
+    <div id="view-favorit" class="page-view" style="display: none;">
+        <section class="katalog-section">
+            <div class="katalog-header">
+                <h2>Mobil Favorit Anda</h2>
+                <p>Daftar mobil pilihan yang telah Anda simpan untuk ditinjau kembali.</p>
+            </div>
+            <div id="favorit-container"></div>
+        </section>
+    </div>
+
+    <!-- TAMPILAN DETAIL MOBIL RINCI -->
+    <div id="view-detail" class="page-view" style="display: none;">
+        <section class="detail-section">
+            <button class="back-btn" onclick="switchView('katalog')">&larr; Kembali ke Katalog</button>
+            <div id="detail-content-container">
+                <!-- Konten rincian, kalkulator kredit, & tombol WhatsApp -->
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

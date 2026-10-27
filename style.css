@@ -1,0 +1,555 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1e293b;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-view {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.navbar {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero-section {
+    background-color: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+    margin: 30px auto;
+    width: 85%;
+    max-width: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.hero-section h2 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+.cta-btn {
+    background-color: #38bdf8;
+    color: #0f172a;
+    border: none;
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #7dd3fc;
+}
+
+.features-section, .featured-cars-section {
+    background-color: white;
+    margin: 30px auto;
+    width: 85%;
+    max-width: 1000px;
+    padding: 40px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.features-section h2, .featured-cars-section h2 {
+    color: #1e293b;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.section-subtitle {
+    color: #64748b;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.feature-card h3 {
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.feature-card p {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.featured-card {
+    background: #f8fafc;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.featured-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.featured-info {
+    padding: 15px;
+}
+
+.featured-card h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    color: #1e293b;
+}
+
+.featured-card .price {
+    margin: 0;
+    font-weight: bold;
+    color: #0284c7;
+    font-size: 1.05rem;
+}
+
+.katalog-section {
+    background-color: #ffffff;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1100px;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.katalog-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.katalog-header h2 {
+    color: #1e293b;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.katalog-header p {
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.search-box-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    padding: 12px 15px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 15px;
+    outline: none;
+}
+
+#search-input:focus {
+    border-color: #1e293b;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: #f8fafc;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #e2e8f0;
+}
+
+.filter-btn.active {
+    background-color: #1e293b;
+    color: white;
+    border-color: #1e293b;
+}
+
+.spinner-container {
+    text-align: center;
+    padding: 40px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e2e8f0;
+    border-top: 4px solid #1e293b;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 15px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#car-container, #favorit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.card-mobil {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    width: 90%;       
+    max-width: 850px; 
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-mobil-body {
+    cursor: pointer;
+}
+
+.card-mobil:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    border-color: #cbd5e1;
+}
+
+/* Tombol Ikon Favorit (Hati) */
+.heart-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background 0.2s;
+    z-index: 5;
+}
+
+.heart-btn:hover {
+    background: #fee2e2;
+}
+
+.heart-btn.active {
+    color: #ef4444;
+    border-color: #fca5a5;
+}
+
+.img-mobil {
+    width: 100%;
+    height: 380px;     
+    object-fit: cover; 
+    border-radius: 8px;
+}
+
+.mobil-header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+    padding-right: 50px;
+}
+
+.mobil-header-info h2 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 1.5rem;
+}
+
+.badge-brand {
+    background-color: #0284c7;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.mobil-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.mobil-details-grid p {
+    margin: 0;
+    font-size: 14px;
+    color: #334155;
+}
+
+.harga-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #16a34a;
+}
+
+/* HALAMAN DETAIL */
+.detail-section {
+    background: white;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 900px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.back-btn {
+    background-color: #64748b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #475569;
+}
+
+.detail-card-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detail-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.detail-info-box h2 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.detail-specs-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    margin: 20px 0;
+}
+
+.detail-specs-box p {
+    margin: 0;
+    font-size: 15px;
+    color: #334155;
+}
+
+.unggulan-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.unggulan-box h3 {
+    color: #166534;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.unggulan-box p {
+    color: #15803d;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* KALKULATOR KREDIT MINI */
+.credit-box {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.credit-box h3 {
+    margin-top: 0;
+    color: #1e293b;
+    font-size: 1.2rem;
+}
+
+.credit-result {
+    font-weight: bold;
+    color: #0284c7;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+/* TOMBOL WHATSAPP */
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #22c55e;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.whatsapp-btn:hover {
+    background-color: #16a34a;
+}
+
+.info-section {
+    padding: 40px; 
+    text-align: center; 
+    background: white; 
+    margin: 30px auto; 
+    width: 85%;
+    max-width: 1000px;
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.kontak-section {
+    padding: 40px; 
+    text-align: center; 
+    background: #1e293b; 
+    color: white; 
+    margin: 30px auto; 
+    width: 85%;
+    max-width: 1000px;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        width: 95%;
+        padding: 40px 15px;
+    }
+    .hero-section h2 {
+        font-size: 1.6rem;
+    }
+    .features-section, .featured-cars-section, .info-section, .kontak-section {
+        width: 95%;
+        padding: 25px 15px;
+    }
+    .card-mobil, .detail-section {
+        width: 95%;     
+        padding: 15px;
+    }
+    .img-mobil, .detail-img {
+        height: 230px;        
+        object-fit: contain;  
+        background-color: #f0f2f5; 
+    }
+}
